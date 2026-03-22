@@ -91,8 +91,10 @@ function runSprites() {
 
 // RESIZE THE CANVAS WHEN THE PAGE LOADS
 window.onload = function() {
-    CANVAS.setAttribute("width", "" + (SPRITE_WIDTH * SCALE) * 2);
-    CANVAS.setAttribute("height", "" + (SPRITE_HEIGHT * SCALE) * 2);
+    // CANVAS.setAttribute("width", "" + (SPRITE_WIDTH * SCALE) * 2);
+    // CANVAS.setAttribute("height", "" + (SPRITE_HEIGHT * SCALE) * 2);
+    CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE);
+    CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE);
 }
 
 // CONTROLS
@@ -234,8 +236,10 @@ FORM.refresh.onclick = function() {
     SPRITE_WIDTH = spriteWidth;
     SPRITE_HEIGHT = spriteHeight;
 
-    CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE * 2);
-    CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE * 2);
+    // CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE * 2);
+    // CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE * 2);
+    CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE);
+    CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE);
 
     cSpriteCol = 0;
     cSpriteRow = 0;
