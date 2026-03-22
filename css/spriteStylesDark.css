@@ -1,0 +1,170 @@
+/* Modern Reset & Dark Theme Variables */
+:root {
+    --bg-color: #0f111a;
+    --card-bg: #1a1d2b;
+    --border-color: #2d3245;
+    --text-main: #e6edf3;
+    --text-muted: #9198a1;
+    --accent-blue: #3894ff;
+    --accent-green: #2ea043;
+    --accent-gray: #30363d;
+    --canvas-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Canvas Styling */
+#sprite-canvas {
+    background-color: #222; /* Darker canvas area */
+    background-image: 
+        linear-gradient(45deg, #2a2a2a 25%, transparent 25%),
+        linear-gradient(-45deg, #2a2a2a 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #2a2a2a 75%),
+        linear-gradient(-45deg, transparent 75%, #2a2a2a 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px; /* Subtle checkerboard for transparency */
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    box-shadow: var(--canvas-shadow);
+    margin-bottom: 30px;
+}
+
+/* Container for Controls & Options */
+div:has(fieldset) {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* Fieldset/Card Styling */
+fieldset {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 0;
+}
+
+legend {
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--accent-blue);
+    padding: 0 10px;
+}
+
+/* Form Layout */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form[name="controls"] {
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Inputs & Labels */
+label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: -10px;
+}
+
+input[type="text"],
+input[type="file"] {
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    color: var(--text-main);
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 148, 255, 0.2);
+}
+
+/* Button Styling */
+input[type="button"] {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.1s;
+}
+
+input[type="button"]:hover {
+    filter: brightness(1.1);
+}
+
+input[type="button"]:active {
+    transform: scale(0.98);
+}
+
+#pausePlay {
+    background-color: var(--accent-gray);
+    color: var(--text-main);
+}
+
+#refresh {
+    background-color: var(--accent-green);
+    margin-top: 10px;
+}
+
+/* Divider & Small Text */
+#only-a-divider {
+    border-bottom: 1px solid var(--border-color) !important;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin-top: 20px;
+}
+
+/* Custom File Upload Button Styling */
+input[type="file"]::file-selector-button {
+    background: var(--accent-gray);
+    color: var(--text-main);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Responsive adjustment */
+@media (max-width: 700px) {
+    div:has(fieldset) {
+        grid-template-columns: 1fr;
+    }
+}

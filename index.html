@@ -1,0 +1,67 @@
+<!-- 
+ SPRITESHEET VIEWER
+ * Developed by Franklan Taylor
+ * Created March 20th, 2026
+ * 
+ * This is the webpage for the spritesheet and animation viewer. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spritesheet Viewer</title>
+    <link rel="icon" type="image/x-icon" href="./assets/SpritesheetViewerIcon.png">
+    <link rel="stylesheet" href="./css/spriteStylesDark.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <canvas id="sprite-canvas" width="800" height="800"></canvas>
+    </div>
+    <div>
+        <fieldset id="controls-field">
+            <legend>Controls</legend>
+            <form name="controls" style="text-align: center;">
+                <input type="button" id="prevFrame" name="prevFrame" value="Previous Frame">
+                <input type="button" id="pausePlay" name="pausePlay" value="Pause">
+                <input type="button" id="nextFrame" name="nextFrame" value="Next Frame">
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Options</legend>
+            <form name="options">
+                <label for="backgroundColor">Background Color:</label>
+                <input type="text" id="backgroundColor" name="backgroundColor" placeholder="avoid including spaces">
+                <input type="button" id="changeColor" name="changeColor" value="Change Color">
+                <!-- <br><br> -->
+                <div id="only-a-divider" style="border-bottom: solid 1px rgb(137, 137, 137);"></div>
+                <!-- <br> -->
+                <label for="spritesheetFile">Upload Spritesheet:</label>
+                <input type="file" id="spritesheetFile" name="spritesheetFile">
+                <!-- <br><br> -->
+                <label for="spriteScale">Scale of Sprites:</label>
+                <input type="text" id="spriteScale" name="spriteScale" value="1" placeholder="1">
+                <!-- <br><br> -->
+                <label for="spritesheetHeight">Width of Spritesheet:</label>
+                <input type="text" id="spritesheetWidth" name="spritesheetWidth" value="" placeholder="in pixels">
+                <!-- <br><br> -->
+                <label for="spritesheetHeight">Height of Spritesheet:</label>
+                <input type="text" id="spritesheetHeight" name="spritesheetHeight" value="" placeholder="in pixels">
+                <!-- <br><br> -->
+                <label for="spritesheetColumns">Number of Columns in Spritesheet:</label>
+                <input type="text" id="spritesheetColumns" name="spritesheetColumns" value="" placeholder="0">
+                <!-- <br><br> -->
+                <label for="spritesheetRows">Number of Rows in Spritesheet:</label>
+                <input type="text" id="spritesheetRows" name="spritesheetRows" value="" placeholder="0">
+                <!-- <br><br> -->
+                <div id="output"></div>
+                <!-- <br><br> -->
+                <input type="button" id="refresh" name="refresh" value="Refresh">
+            </form>
+            <p>*This tool does not automatically fit and scale sprites within the spritesheet. It is preferred to do that manually before uploading.</p>
+        </fieldset>
+    </div>
+</body>
+<script src="./js/sprites.js"></script>
+</html>
