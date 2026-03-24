@@ -1,13 +1,13 @@
 /* Modern Reset & Dark Theme Variables */
 :root {
-    --bg-color: #08090d;
-    --card-bg: #181d28;
-    --border-color: #3f4044;
+    --bg-color: #0f111a;
+    --card-bg: #1a1d2b;
+    --border-color: #2d3245;
     --text-main: #e6edf3;
     --text-muted: #9198a1;
     --accent-blue: #3894ff;
-    --accent-green: #13712e;
-    --accent-gray: #31373f;
+    --accent-green: #2ea043;
+    --accent-gray: #30363d;
     --canvas-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -66,7 +66,7 @@ legend {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     padding: 0 10px;
 }
 
@@ -104,13 +104,13 @@ input[type="file"] {
 
 input[type="text"]:focus {
     outline: none;
-    border-color: var(--accent-green);
+    border-color: var(--accent-blue);
     box-shadow: 0 0 0 3px rgba(56, 148, 255, 0.2);
 }
 
 /* Button Styling */
 input[type="button"] {
-    background-color: var(--accent-green);
+    background-color: var(--accent-blue);
     color: white;
     border: none;
     padding: 12px 20px;
@@ -134,7 +134,7 @@ input[type="button"]:active {
 }
 
 #refresh {
-    background-color: var(--accent-blue);
+    background-color: var(--accent-green);
     margin-top: 10px;
 }
 
