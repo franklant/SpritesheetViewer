@@ -18,6 +18,9 @@ const OUTPUT = document.getElementById("output");
 const FORM = document.options;
 const CONTROLS = document.controls;
 
+// Image elements
+const OUTPUT_IMAGE = document.getElementById("spritesheet-img");
+
 //// GLOBAL VARIABLES ////
 let SPRITE_FRAME_RATE = 12;                                            
 const CANVAS_WIDTH = CANVAS.getAttribute("width");
@@ -84,9 +87,7 @@ function runSprites() {
         cFrame++;
         cSpriteCol++;
     }
-
-    //console.log("Current Column: " + cSpriteCol + " | Current Row: " + cSpriteRow + " | Current Frame: " + cFrame);
-
+    
     // current sprite col is greater than the number of columsn within the spritesheet so move to the next row of the sheet
     if (cSpriteCol >= SPRITE_COL_COUNT && isPaused === false) {
         cSpriteRow++;
@@ -103,8 +104,6 @@ function runSprites() {
 
 // RESIZE THE CANVAS WHEN THE PAGE LOADS
 window.onload = function() {
-    // CANVAS.setAttribute("width", "" + (SPRITE_WIDTH * SCALE) * 2);
-    // CANVAS.setAttribute("height", "" + (SPRITE_HEIGHT * SCALE) * 2);
     CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE);
     CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE);
 }
@@ -121,7 +120,6 @@ CONTROLS.prevFrame.onclick = function() {
         // if we cant go back anymore rows, keep it at row 0, col 0
         if (cSpriteRow <= 0) {
             cSpriteRow = SPRITE_ROW_COUNT - 1;
-            //cSpriteCol = 0;
         } else {
             cSpriteRow--;
         }
@@ -248,8 +246,6 @@ FORM.refresh.onclick = function() {
     SPRITE_WIDTH = spriteWidth;
     SPRITE_HEIGHT = spriteHeight;
 
-    // CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE * 2);
-    // CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE * 2);
     CANVAS.setAttribute("width", "" + SPRITE_WIDTH * SCALE);
     CANVAS.setAttribute("height", "" + SPRITE_HEIGHT * SCALE);
 
@@ -257,11 +253,8 @@ FORM.refresh.onclick = function() {
     cSpriteRow = 0;
     cFrame = 0;
 
-    // SPRITESHEET = new Image(sheetWidth, sheetHeight);
     SPRITESHEET.src = URL.createObjectURL(file);
-    
-    // successful, clear errors;
-    // OUTPUT.innerHTML = "";
+    OUTPUT_IMAGE.src = URL.createObjectURL(file);
 }
 
 FORM.changeColor.onclick = function() {
