@@ -32,7 +32,7 @@ let SHEET_HEIGHT = 0;
 let SPRITE_WIDTH = (SHEET_WIDTH / SPRITE_COL_COUNT);
 let SPRITE_HEIGHT = (SHEET_HEIGHT / SPRITE_ROW_COUNT);
 
-let SCALE = 1;
+let SCALE = 6;              // GOOD VISIBLE SCALE
 
 let cSpriteCol = 0;
 let cSpriteRow = 0;
@@ -55,16 +55,28 @@ function runSprites() {
     CONTEXT.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 
     // DRAW THE SPRITE  
+    // CONTEXT.drawImage(
+    //     SPRITESHEET,                                                        // IMAGE
+    //     cSpriteCol * SPRITE_WIDTH,                                          // SX
+    //     cSpriteRow * SPRITE_HEIGHT,                                         // SY
+    //     SPRITE_WIDTH,                                                       // SWIDTH
+    //     SPRITE_HEIGHT,                                                      // SHEIGHT
+    //     (Number(CANVAS.getAttribute("width")) / 2) - (SPRITE_WIDTH / 2),    // DX                                              // DX
+    //     (Number(CANVAS.getAttribute("height")) / 2) - (SPRITE_HEIGHT / 2),  // DY                                              // DY
+    //     SPRITE_WIDTH * SCALE,                                               // DWIDTH
+    //     SPRITE_HEIGHT * SCALE                                               // DHEIGHT
+    // );
+
     CONTEXT.drawImage(
-        SPRITESHEET,                                    // IMAGE
-        cSpriteCol * SPRITE_WIDTH,                      // SX
-        cSpriteRow * SPRITE_HEIGHT,                     // SY
-        SPRITE_WIDTH,                                   // SWIDTH
-        SPRITE_HEIGHT,                                  // SHEIGHT
-        0,                                              // DX
-        0,                                              // DY
-        SPRITE_WIDTH * SCALE,                           // DWIDTH
-        SPRITE_HEIGHT * SCALE                           // DHEIGHT
+        SPRITESHEET,                                                        // IMAGE
+        cSpriteCol * SPRITE_WIDTH,                                          // SX
+        cSpriteRow * SPRITE_HEIGHT,                                         // SY
+        SPRITE_WIDTH,                                                       // SWIDTH
+        SPRITE_HEIGHT,                                                      // SHEIGHT
+        0,                                                                  // DX 
+        0,                                                                  // DY
+        SPRITE_WIDTH * SCALE,                                               // DWIDTH
+        SPRITE_HEIGHT * SCALE                                               // DHEIGHT
     );
 
     // advance frames only if not paused
